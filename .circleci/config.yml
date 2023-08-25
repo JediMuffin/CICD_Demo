@@ -14,3 +14,12 @@ jobs:
           command: |
             javac SimpleApp.java
             java SimpleApp
+  deploy:
+    executor: java-executor
+    steps:
+      - checkout
+      - run:
+          name: Deploy to Windows Directory
+          command: |
+            mkdir -p C:\Temp\JavaApp
+            cp SimpleApp.class C:\Temp\JavaApp\
