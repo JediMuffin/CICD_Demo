@@ -15,6 +15,7 @@ jobs:
             javac SimpleApp.java
             java SimpleApp
   deploy:
+    executor: general-executor
     steps:
       - checkout
       - run:
