@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           name: Install dependencies
-          command: composer install --no-progress --no-suggest
+          command: composer install --no-progress
 
       - run:
           name: Run tests
