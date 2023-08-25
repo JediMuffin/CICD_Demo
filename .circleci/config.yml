@@ -18,5 +18,5 @@ jobs:
             git config --global user.name "JediMuffin"
             git add
             git commit -m "Auto-commit from CircleCI"
-            git push origin main
+            git push origin staging
  
