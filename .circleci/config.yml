@@ -14,12 +14,24 @@ jobs:
           command: |
             javac SimpleApp.java
             java SimpleApp
-  deploy:
-    executor: java-executor
-    steps:
-      - checkout
-      - run:
-          name: Deploy to Windows Directory
-          command: |
-            mkdir -p C:\Temp\JavaApp
-            cp SimpleApp.class C:\Temp\JavaApp\
+            
+ workflows:
+  version: 2
+  build-and-push:
+    jobs:
+      - build
+      - deploy:
+          name: Deploy to GitHub
+          requires:
+            - build
+          steps:
+            - attach_workspace:
+                at: /workspace
+            - run:
+                name: Commit and Push Changes
+                command: |
+                  git config --global user.email "vincebufete@gmail.com"
+                  git config --global user.name "JediMuffin"
+                  git add .
+                  git commit -m "Automated commit by JediMuffin"
+                  git push origin main
