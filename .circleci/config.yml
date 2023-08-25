@@ -14,19 +14,9 @@ jobs:
           command: |
             javac SimpleApp.java
             java SimpleApp
-  deploy:
-    steps:
-      - checkout
-      - run:
-          name: Push Changes
-          command: |
             git config --global user.email "vincebufete@gmail.com"
             git config --global user.name "JediMuffin"
             git add -A
             git commit -m "Auto-commit from CircleCI"
             git push origin main
-workflows:
-  build_test_deploy:
-    jobs:
-      - build
-      - deploy
+ 
