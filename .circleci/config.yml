@@ -5,6 +5,15 @@ executors:
       - image: openjdk:11
 
 jobs:
+  build:
+    executor: java-executor
+    steps:
+      - checkout
+      - run:
+          name: Compile and Test
+          command: |
+            javac SimpleApp.java
+            java SimpleApp
 deploy:
    steps:  
      - checkout
