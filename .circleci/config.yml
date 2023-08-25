@@ -17,7 +17,7 @@ jobs:
 deploy:
    steps:  
      - checkout
-      - run:
+     - run:
           name: Push Changes
           command: |
             git config --global user.email "vincebufete@gmail.com"
