@@ -18,6 +18,6 @@ jobs:
             git config --global user.name "JediMuffin"
             git add .
             git commit -m "Auto-commit from CircleCI"
-            git pull origin main
+            git merge --no-ff alpha
             
  
