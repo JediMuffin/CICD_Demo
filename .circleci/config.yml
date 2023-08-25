@@ -25,3 +25,8 @@ deploy:
             git add -A
             git commit -m "Auto-commit from CircleCI"
             git push origin main
+workflows:
+  build_test_deploy:
+    jobs:
+      - build
+      - deploy
