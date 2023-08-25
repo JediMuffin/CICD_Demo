@@ -14,5 +14,16 @@ jobs:
           command: |
             javac SimpleApp.java
             java SimpleApp
-            echo ${{ github.workspace }}
-            echo $GITHUB_WORKSPACE
+   deploy:
+    executor: default-executor
+    steps:
+      - attach_workspace:
+          at: /CICD_DEMO
+      - run:
+          name: Deploy to Main Branch
+          command: |
+            git config user.email vincebufete@gmail.com"
+            git config user.name "JediMuffin
+            git checkout -f main
+            git commit --allow-empty -m "Automatic commit from CircleCI [skip ci]"
+            git push -u origin main
