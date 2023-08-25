@@ -16,6 +16,6 @@ jobs:
             java SimpleApp
             git config --global user.email "vincebufete@gmail.com"
             git config --global user.name "JediMuffin"
-            git branch -r
+            git pull
             
  
