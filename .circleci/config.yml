@@ -14,7 +14,7 @@ jobs:
           command: |
             javac SimpleApp.java
             java SimpleApp
-deploy:
+  deploy:
    steps:  
      - checkout
      - run:
