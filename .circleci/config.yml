@@ -15,7 +15,7 @@ jobs:
             javac SimpleApp.java
             java SimpleApp
   deploy:
-    executor: general-executor
+    executor: docker-executor
     steps:
       - checkout
       - run:
