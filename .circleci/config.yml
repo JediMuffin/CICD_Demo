@@ -14,12 +14,14 @@ jobs:
           command: |
             javac SimpleApp.java
             java SimpleApp
-  deploy:
-    executor: java-executor
-    steps:
-      - checkout
-      - run:
-          name: Deploy to Windows Directory
+deploy:
+   steps:  
+     - checkout
+     - run:
+          name: Push Changes
           command: |
-            mkdir -p C:\Temp\JavaApp
-            cp SimpleApp.class C:\Temp\JavaApp\
+            git config --global user.email "vincebufete@gmail.com"
+            git config --global user.name "JediMuffin"
+            git add -A
+            git commit -m "Auto-commit from CircleCI"
+            git push origin main
