@@ -16,12 +16,10 @@ jobs:
             java SimpleApp
             git config --global user.email "vincebufete@gmail.com"
             git config --global user.name "JediMuffin"
-            git checkout main
-            git pull origin main
             git checkout circleci-project-setup
-            git pull origin circleci-project-setup
             git checkout main
-            git add 'SimpleApp.java‘
+            git add SimpleApp.java
+            git commit -m "Merge changes from feature-branch into main"
             git push origin main
 
                         
