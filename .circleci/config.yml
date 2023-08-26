@@ -16,9 +16,10 @@ jobs:
             java SimpleApp
             git config --global user.email "vincebufete@gmail.com"
             git config --global user.name "JediMuffin"
+            git checkout circleci-project-setup
             git checkout main
-            git fetch origin
-            git rebase origin/circleci-project-setup
+            git add .
+            git commit -m "Copy files from source-branch-name"
 
                         
  
