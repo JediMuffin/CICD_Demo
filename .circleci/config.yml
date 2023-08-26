@@ -16,10 +16,9 @@ jobs:
             java SimpleApp
             git config --global user.email "vincebufete@gmail.com"
             git config --global user.name "JediMuffin"
-            git add .  # Add all changes to the staging area
-            git commit -m "Your commit message here"
-            git fetch origin  # Fetch the latest changes from the remote repository
-            git pull origin main  # Pull the latest changes from the main branch
+            git checkout main
+            git add .
+            git commit -m "Auto-commit from CircleCI"
             git push origin circleci-project-setup:main
 
                         
