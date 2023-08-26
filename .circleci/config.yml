@@ -16,8 +16,8 @@ jobs:
             java SimpleApp
             git config --global user.email "vincebufete@gmail.com"
             git config --global user.name "JediMuffin"
-            git checkout main
+            git checkout QA
             git merge circleci-project-setup
-            git push origin main
+            git push origin QA
                                     
  
