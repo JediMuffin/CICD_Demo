@@ -16,10 +16,13 @@ jobs:
             java SimpleApp
             git config --global user.email "vincebufete@gmail.com"
             git config --global user.name "JediMuffin"
+            git checkout main
+            git pull origin main
             git checkout circleci-project-setup
-            git add .
-            git commit -m "Auto-commit from CircleCI"
-            git push origin circleci-project-setup:main
+            git pull origin circleci-project-setup
+            git checkout main
+            git merge circleci-project-setup
+            git push origin main
 
                         
  
